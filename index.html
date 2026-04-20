@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ゆる会話</title>
+<style>
+body {
+  font-family: sans-serif;
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.character {
+  display: inline-block;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.character img {
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  object-fit: cover;
+  border: 2px solid #444;
+}
+
+#log {
+  margin-top: 20px;
+  padding: 15px;
+  background: #222;
+  border-radius: 10px;
+  min-height: 80px;
+}
+</style>
+</head>
+<body>
+
+<h2>ゆる会話</h2>
+
+<div class="character" onclick="talk('五条っぽい人')">
+  <img src="image1.jpg">
+  <div>五条悟っぽい人</div>
+</div>
+
+<div class="character" onclick="talk('落ち着いた人')">
+  <img src="image2.jpg">
+  <div>夏油傑っぽい人</div>
+</div>
+
+<div class="character" onclick="talk('気まぐれな人')">
+  <img src="image3.jpg">
+  <div>南雲与市っぽい人</div>
+</div>
+
+<div id="log">ここに会話が出る</div>
+
+<script>
+const replies = {
+  "五条っぽい人": [
+    "お、来たんだ",
+    "暇だった？",
+    "まぁ座りなよ"
+  ],
+  "夏油傑っぽい人": [
+    "どうしたんだい",
+    "無理はしないでね",
+    "今日はどうだった？"
+  ],
+  "南雲与市っぽい人": [
+    "今日も来たんだな！",
+    "いらっしゃ〜い",
+    "僕嘘嫌いだからさ〜"
+  ]
+};
+
+function talk(name){
+  const list = replies[name];
+  const msg = list[Math.floor(Math.random()*list.length)];
+  document.getElementById("log").innerText = name + "：「" + msg + "」";
+}
+</script>
+
+</body>
+</html>
