@@ -41,40 +41,71 @@ body {
 
 <div class="character" onclick="talk('五条っぽい人')">
   <img src="image1.jpg">
-  <div>五条悟っぽい人</div>
+  <div>朝倉シンっぽい人</div>
 </div>
 
 <div class="character" onclick="talk('落ち着いた人')">
   <img src="image2.jpg">
-  <div>夏油傑っぽい人</div>
+  <div>大佛っぽい人</div>
 </div>
 
 <div class="character" onclick="talk('気まぐれな人')">
   <img src="image3.jpg">
+  <div>神々廻っぽい人</div>
+</div>
+
+  <div class="character" onclick="talk('気まぐれな人')">
+  <img src="image4.jpg">
   <div>南雲与市っぽい人</div>
 </div>
+
+  <div class="character" onclick="talk('気まぐれな人')">
+  <img src="image5.jpg">
+  <div>夏油傑っぽい人</div>
+</div>
+
+  <div class="character" onclick="talk('気まぐれな人')">
+  <img src="image6.jpg">
+  <div>五条悟っぽい人</div>
+</div>
+
 
 <div id="log">ここに会話が出る</div>
 
 <script>
 const replies = {
-  "五条っぽい人": [
-    "お、来たんだ",
-    "暇だった？",
-    "まぁ座りなよ"
+  "シン": [
+    "お、今日も来てくれたんだな",
+    "今日はどうだった？",
+    "ちゃんと休んでるか？"
   ],
-  "夏油傑っぽい人": [
+  "大佛": [
+    "……ここ、落ち着くね",
+    "なんか眠くなってきた…",
+    "無理しなくていいよ…"
+  ],
+  "神々廻": [
+    "はぁ…まぁええけど",
+    "ちゃんと飯食べてるか？",
+    "ええやん"
+  ],
+  "南雲": [
+    "暇なの？いいね〜",
+    "今日は何するの？",
+    "まぁ適当でいいでしょ〜"
+  ],
+  "夏油": [
     "どうしたんだい",
     "無理はしないでね",
     "今日はどうだった？"
   ],
-  "南雲与市っぽい人": [
-    "今日も来たんだな！",
-    "いらっしゃ〜い",
-    "僕嘘嫌いだからさ〜"
+  "五条": [
+    "お、来たじゃん",
+    "退屈してた？",
+    "まぁ座りなよ"
   ]
 };
-
+  
 function talk(name){
   const list = replies[name];
   const msg = list[Math.floor(Math.random()*list.length)];
